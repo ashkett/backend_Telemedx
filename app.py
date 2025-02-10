@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 from flask_cors import CORS
 import google.generativeai as palm
 import pdfplumber
@@ -16,6 +16,10 @@ if not key:
 
 palm.configure(api_key=key)
 model = palm.GenerativeModel("gemini-1.5-flash")
+
+@app.route('/', methods=['GET','POST'])
+def index():
+    return render_template('index.html')
 
 @app.route('/summarize', methods=['POST'])
 def summarize():
