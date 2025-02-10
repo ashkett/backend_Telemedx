@@ -67,7 +67,7 @@ def summarize():
 
 
 # Load dataset from CSV
-csv_file_path = "./Medicine_Details.csv"
+csv_file_path = "./assets/Medicine_Details.csv"
 data = pd.read_csv(csv_file_path)
 
 # Ensure necessary columns exist
